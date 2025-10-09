@@ -18,7 +18,7 @@ public class Maths {
     nums[i] = Integer.parseInt(parts[i]);
 }
         int result = maxDifference(nums);
-        System.out.println("Difference: " + result);
+        System.out.println("Maximim difference: " + result);
     }
     public static int maxDifference(int[] nums) {
         
