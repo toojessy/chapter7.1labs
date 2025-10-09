@@ -11,24 +11,31 @@ public class Maths {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter numbers separated by spaces: ");
-        nums[i] = input.nextInt();
+        String line = input.nextLine();
+        String[] parts = line.split(" ");
+        int[] nums = new int[parts.length];
+        for (int i = 0; i < parts.length; i++) {
+    nums[i] = Integer.parseInt(parts[i]);
+}
+        int result = maxDifference(nums);
+        System.out.println("Difference: " + result);
     }
-    public class MaxDifference {
-        int nums = new int[nums.length];
-        for (int i = 0; i < nums; i++) {
+    public static int maxDifference(int[] nums) {
+        
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] > max) {
-                int max = nums[i];
+                max = nums[i];
             }
-            for (int j = i + 1; j < nums; j++) {
+            for (int j = i + 1; j < nums.length; j++) {
                 if (min > nums[j]) {
-                    int min = nums[j];
+                    min = nums[j];
                 }
             }
         }
-        int diff = max - min;
-        System.out.println("Largest number: " + max);
-        System.out.println("Smallest number: " + min);
-        System.out.println("Difference: " + diff);
+        return max - min;
     }
-
+ 
 }
